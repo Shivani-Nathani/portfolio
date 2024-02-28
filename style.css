@@ -1,0 +1,652 @@
+@import url(https://fonts.google.com/specimen/Be+Vietnam+Pro?query=vietnam+pro);
+ *{
+    margin:0;
+    padding:0;
+    font-family:"Be Vietnam Pro",sans-serif;
+    scroll-behavior:smooth;
+    
+ }
+
+ #wrapper{
+    height:100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* margin:0 auto; */
+ }
+ .navbar{ 
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:1rem;
+ }
+ .container{
+    width:1200px;
+    margin:0 auto;/* 0 auto, the top/bottom margin is 0, and the left/right margin is auto*/
+ }
+ .logo{
+    width:60px;
+ }
+ .logo-container{
+    display:flex;
+    justify-content:baseline;
+    align-items: center;
+}
+.logotext{
+    margin-left:-0.6rem;
+    font-size:28px;
+}
+.nav-items{
+    display:flex;
+    gap:2rem;
+    padding:0 4em;
+}
+.nav-items div{
+    font-size:20px;
+    font-weight:500;
+    cursor:pointer;
+}
+.nav-items div a{
+    text-decoration: none;
+    color:black;
+}
+.nav-items div:hover{
+    transition: all 2s  ;/* for smooth increase to bold*/
+    font-weight:bold;
+} 
+.hero-section{
+    position:relative; /*image ko overlap karna hai*/
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+    gap:5rem;
+    margin:4rem auto;
+    padding: 0 1rem;
+    padding-bottom: 8rem;
+}
+.hero-section-left{
+    display:flex;
+    flex-direction: column;
+    justify-content: center; /*dekhne mai acha lage*/
+    gap:2rem;
+}   
+.faded-text{
+    user-select:none;
+    font-size:7em;
+    color:rgb(231,231,231,231);
+    position:absolute; /*acc to its nearest ancestor   */
+    bottom:-16%; /* to position it in bottom*/
+    left:0%;
+    font-weight:bold;
+    transition:all 3s;
+}
+.hero-section-heading{
+    font-size:35px;
+    color: #343d68;
+    font-weight:500;
+}
+.role{
+    color:#4e45d5;
+    font-weight:800;
+}
+.hero-section-sub-heading{
+    font-size:45px;
+    line-height:45px;
+}
+.hero-section-description{
+    margin-top:1rem;
+    width:70%;
+    font-weight:500;
+}
+.btn {
+    background-color: #e84949;
+    width: fit-content;
+    color: white;
+    padding: 0.8rem 2.3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+  
+  .btn::before{
+    content: "";
+    position: absolute;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.5s ease;
+  }
+  .btn:hover{
+    color:  white;
+  }
+  
+  .btn:hover::before{
+    transform: scaleX(1);
+  }
+  
+  
+.hero-section-right{
+    position:relative;
+}
+.absolute{
+    position:absolute;
+}
+.userImage{
+    padding:2.5rem;
+    filter:grayscale(1);
+    transition:all 1s;
+    animation:scaleImage 5s linear infinite;
+}
+.userImage img{
+    width: 300px;
+    /*  z-index:-9; */
+}
+@keyframes scaleImage{
+    0%{
+        filter:grayscale(1);
+        transform:scale(1);
+    }
+    50%{
+        filter:grayscale(0);
+        transform:scale(1.1);
+        box-shadow:3px 3px 10px black;
+    }
+    100%{
+        transform:scale(1);
+        filter:grayscale(1);
+    }
+     
+}
+.iconDots{
+    z-index:9;
+    bottom:-1rem; /*acc to his parent hero section right   */
+    right:0; 
+    animation-name:dotsAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes dotsAnimation{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+.icon-cube{
+    top:-0.8em;
+    right:1em;
+    z-index:9;
+    animation-name: iconAnimations;
+    animation-duration:5s;
+    animation-iteration-count:infinite;
+}
+@keyframes iconAnimations{
+    0%{
+        transform:rotateY(0deg) translateY(0px);
+    }
+    50%{
+        transform:rotateY(180deg) translateY(-12px);
+    }
+    100%{
+        transform:rotateY(360deg) translateY(0px);
+    }
+}
+.icon-circle{
+    z-index: 9;
+    bottom:0px;
+    animation-name:circleAnimations;
+    animation-duration:5s;
+    animation-iteration-count:infinite;
+}
+@keyframes circleAnimations{
+    50% {
+        transform:translateX(10px) translateY(-10px);
+    }
+}
+.iconZigZag{
+    z-index:9;
+    top: 1.5em;
+    left: -0.3em;
+    animation: zigzagAnimation 5s infinite;
+}
+@keyframes zigzagAnimation{
+    50%{
+        transform:translateX(10px) translateY(-10px);
+    }
+}
+.icon-plus{
+    z-index:9;
+    top: -0.8rem;
+    left: 50%;
+    animation: shakeEffectPlus 5s ease-in infinite;
+}
+@keyframes shakeEffectPlus {
+    50% {
+      top: 1%;
+      left: 45%;
+    }
+}
+.project-section{
+    background-color: rgb(231,231,231,231);
+    margin-top:4rem;
+}
+.page-header{
+    color: #e84949;
+    text-align:center; /*center mai dal diya project heading ko*/
+    font-size:90px;
+    padding-top: 30px; 
+}
+.project-container{
+    max-width:1200px;
+    margin:0 auto;/*to place project c0ntainer in center */
+    padding: 3rem 0;
+    display:flex;
+    flex-direction:column;
+    gap:120px; /*gap between two cards*/
+}
+.projectCard{
+    width:90%;
+    height:550px;
+    background-image:url(./Images/projects/Project1.png);
+    background-size:cover; /*to fit the image properly*/
+    position:relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+
+}
+.projectCard::after{ /* for black tint*/
+    content:"";/* no content*/
+    position:absolute;/*after ko overlap larwana hai*/
+    /*top,left,right,bottom =0 taki wo image ke upar kali layer puri chad jaye*/
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #1f1f1f9a; /*9a for opacity*/
+    /* transform:scaleX(1); taki baad mai jab hum scale 1.1 kare to zoom out hoga */
+    z-index:0;
+}
+.projectCard::before{ /*for blue tint*/
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:linear-gradient(45deg, #343d68, #343d68be, #343d687c);
+    transform:scaleX(0);
+    transform-origin: left;
+    transition: all 0.4s;
+    z-index:1;
+}
+.projectCard:hover .projectNumber{
+    /* display:block ; to unhide the number */
+    z-index:10;
+}
+.projectCard:hover::before{
+    transform:scaleX(1);
+}
+.projectNumber{
+    position:absolute;
+    font-size:200px;
+    font-weight:600;
+    color:white;
+    z-index:-10;
+    /* display:none;to hide number */
+}
+.projectNumber-left{
+    right:-40px;
+    top:-45px;
+}
+.pageNumber-right{
+    left:-40px;
+    top:-45px; 
+}
+.projectContent{
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    color:white;
+    padding:2em;
+    bottom:20%;
+    z-index:5;
+    gap:1em;
+    transition:all 0.4s;
+}
+.projectContent-left{
+    left:10%;
+}
+.projectContent-right{
+    right:10%;
+}
+.project-skills{
+    display:flex;
+    width:60%;/*width of projectskill container so that all images comes inside it*/
+    gap:10px;
+    flex-wrap:wrap;/*taki jo skill image fit na aaye wo next line mai challa jaye*/
+
+}
+.projectSkill{
+    width:40px;
+}
+.ProjectHeading{
+    font-size:50px;
+    font-weight:bold;
+    line-height:3rem;
+}
+.projectSubHeading{
+    width:70%;
+    font-size:16px;
+    font-style:italic;
+}
+.btn-group{
+    display:flex;
+    gap:0.9rem;
+    align-items: center;
+    
+}
+.icon{
+    cursor:pointer;
+    color:white;
+    font-size:45px; /*to increase size of icon*/
+    transition:all 0.4s;
+}
+.icon:hover{
+    color:#e84949; 
+}
+.projectCard:hover .projectContent{ /*card ke upar hover karna hai aur content scal karna hai*/
+    transform:scale(1.1) ;
+    transition: all 0.4s;
+}
+#project1{
+    background-image: url(./Images/projects/Project1.png);
+}
+#project4 {
+    margin-left:120px;
+    background-image: url(./Images/projects/Project4.png);
+}
+#project3{
+    background-image: url(./Images/projects/Project3.png);
+}
+#project2{
+    margin-left:120px;
+    background-image: url(./Images/projects/Project2.png);
+}
+@media (max-width: 600px) {
+    .container{
+        width:100%;
+    }
+    .nav-items{
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .hero-section{
+        display:flex;
+        flex-wrap: wrap;;
+    }
+    .hero-section{
+        position: relative;;
+    }
+    .faded-text{
+        /* transform: scale(0.5); */
+        display:flex;
+        position: absolute;
+        bottom: -7%;
+        font-size:3rem;
+    }
+    .projectCard{
+        margin: 0;
+        height: 300px;
+        width:100%;
+        background-size:cover;
+        background-position: center;
+        
+    }
+    .projectContent{
+        transform: scale(0.6);
+        bottom: 0;
+        left: 0;
+        top: 0;
+    }
+    #project4,#project2{
+        margin-left: 0%;
+    }
+    .project-skills{
+        width: 100%;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .nav-items{
+        display:flex;
+        flex-wrap: wrap;;
+    }
+}
+@media (max-width: 1200px) {
+    .container{
+        width:100%;
+    }
+    .nav-items{
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .project-container{
+        display:flex;
+        margin:10px;  
+    }
+    .projectCard{
+        width:100%;
+        background-size:cover;
+        background-position: center;
+    }
+    
+    #project4,#project2{
+        margin-left: 0%;
+    }
+}
+.skillContainer{
+    position: relative;
+    display:flex;
+    padding:5rem;
+    margin:10rem auto;
+    gap:30px;
+    /* height:95%; */
+}
+.leftSkillContainer{
+    width:50%;/*left and right part 50-50*/
+    display:flex;
+    flex-direction: column;
+}
+.rightSkillContainer{
+    width:50%;
+    display:flex;
+    flex-wrap: wrap;
+    position:relative;/*icons image ko overlapp karana hai*/
+    gap:2rem;
+    justify-content: center;/*to make that egg like circle at center*/
+}
+.skillFadedText{
+    position:absolute;
+    font-size: 15em;
+    font-style:bold;
+    color:rgb(231,231,231);
+    bottom:-34.5%;
+    right:-1%;
+    user-select:none;
+    overflow-y: hidden ;
+}
+.blobStyle{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    animation:blobStyle 3s linear infinite;
+    z-index: -5;
+}
+@keyframes blobStyle{
+    50%{
+        top:54%;
+        left:46%;
+    }
+}
+.skillsLogo{
+    width:90px;
+    transition:all 0.5s;
+}
+.skillsLogo:hover{
+    transform:scale(1.2);
+}
+.skillHeading{
+    font-size: 50px;
+    font-style: bold;
+    color:#e84949;
+    line-height: 50px;
+
+}
+.caps{
+    font-size: 90px;
+}
+.skillSubHeading{
+    margin-top:1rem;
+    width:85%;
+    text-align: justify;/*puri width le leti hai. The inline contents are justified. Text should be spaced to line up its left and right edges to the left and right edges of the line box, except for the last line.*/
+    
+}
+.skillSubHeading p{
+    margin:15px 0;
+}
+
+.contact-us-form-container{
+    width: 100%;
+    background-color:rgb(231,231,231);
+}
+.contactUs-heading{
+    color:#e84949;
+    font-size: 5em;
+    padding-top:2rem;
+}
+.contactUs-subheadig{
+    font-size: 3rem;
+    color:#343d68aa;
+    text-transform: capitalize;/*har pahela letter capitalize*/
+
+}
+.contactUs-formContainer{
+    margin-top:25px;
+    align-items: center;
+    justify-content: center;
+}
+.formFieldContainer{
+    display:flex;
+    flex-direction: column;
+    gap:27px;
+    width:70%;
+    height:110%;
+    margin:2rem 5rem;
+}
+.formfield{
+    font-size: 24px;
+    padding:0 2em; 
+    border-radius: 5px; /*for rounded shape*/
+    box-shadow: 2px 2px 10px #1f1f1f;
+    font-weight: 500;
+    border:none;
+    margin-top: 17px;
+}
+#submit-btn{
+    border:none;
+    font-size:1.4rem;
+    margin:1rem 0;
+
+}
+#submit-btn:hover{
+    scale:0.9;
+}
+.submit-icon{
+    padding:0 1rem;
+    font-size:1.5rem;
+}
+ footer{
+    position:relative;/*faded ko overlapp karenge*/
+    margin-top:-30px;
+    background-color: #343d68;
+    padding:5rem; 
+}
+.footer-wrapper{
+    display:flex;
+    gap:1rem;
+    padding:1.2.rem;
+    justify-content:space-between; /*to place in extrem end*/
+    align-items:center;
+}
+footer-faded-text{
+    position: absolute;
+    left:0;
+    bottom:0;
+    color:#535c87;
+    user-select: none;
+    font-size: 5em;
+
+} 
+.link-wrapper{
+    display: flex;
+    gap:1.2rem;
+
+}
+.link-wrapper div a{
+    color:white;
+    text-decoration: none;
+    transition: all 0.6s;
+
+}
+.link-wrapper div a:hover{
+    color:#e84949;
+}
+.icon-wrapper{
+    display: flex;
+    gap:1rem;
+}
+@media (max-width: 600px) {
+    .skillContainer{
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        position: relative;
+        padding:5px;
+    }
+    .leftSkillContainer{
+        width:100%;
+    }
+    .rightSkillContainer{
+        /* margin-left: 0px; */
+        display:flex;
+        width:100%;        
+    }
+    /* .skillsLogo{
+        width:40px;
+    } */
+    .skillFadedText{
+        position:absolute;
+        bottom:0%;
+        color:white;
+    }
+    footer-faded-text{
+        z-index:-10;
+    }
+    .footer-wrapper{
+        display:flex;
+        flex-direction: column;
+    }
+    .para{
+        width:100%;
+    }
+
+}
